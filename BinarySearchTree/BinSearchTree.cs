@@ -10,6 +10,7 @@ namespace BinarySearchTree
     public class BinSearchTree<T> where T : IComparable<T>
     {
         public int leftCount, rightCount;
+        public bool result = false;
 
         public T NodeData { get; set; }
         public BinSearchTree<T> LeftTree { get; set; }
@@ -73,5 +74,28 @@ namespace BinarySearchTree
         {
             Console.WriteLine("Size of the binary tree is : " + (1 + this.leftCount + this.rightCount)+"\n");
         }
+
+        //Method to search the given value in the binary tree(UC3)
+        public bool IfValueExists(T data, BinSearchTree<T> node)
+        {
+            if (node == null)
+            {
+                return false;
+            }
+            if (node.NodeData.Equals(data))
+            {
+                result = true;
+            }
+            else if (data.CompareTo(node.NodeData) < 0)
+            {
+                IfValueExists(data, node.LeftTree);
+            }
+            else
+            {
+                IfValueExists(data, node.RightTree);
+            }
+            return result;
+        }
+
     }
 }

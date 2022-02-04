@@ -20,7 +20,7 @@ namespace BinarySearchTree
             while (true)
             {
                 Console.WriteLine("1: Insert Default Values \n2: Enter More Values \n3: Display Binary Tree Values \n4: Get Size Of Binary Tree"+
-                                  "\n5: Exit");
+                                  "\n5: Check The Value Exist Or Not \n6: Exit");
                 Console.Write("Enter A Choice From Above : ");
                 int choice = int.Parse(Console.ReadLine());
                 switch (choice)
@@ -59,6 +59,16 @@ namespace BinarySearchTree
                         binaryTree.GetSize();
                         break;
                     case 5:
+                        //Checking the given value exists or not(UC3)
+                        Console.Write("Enter A Value To Check If Its Exist Or Not In Binary Tree : ");
+                        int valCheck = int.Parse(Console.ReadLine());
+                        bool result = binaryTree.IfValueExists(valCheck, binaryTree);
+                        if (result)
+                            Console.WriteLine("The Given Value {0} Is Present In Binary tree \n", valCheck);
+                        else
+                            Console.WriteLine("The Given Value {0} Is Not Present In Binary tree \n", valCheck);
+                        break;
+                    case 6:
                         Environment.Exit(0);
                         break;
                     default:
