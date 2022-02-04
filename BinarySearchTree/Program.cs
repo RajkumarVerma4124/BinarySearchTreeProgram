@@ -19,7 +19,7 @@ namespace BinarySearchTree
 
             while (true)
             {
-                Console.WriteLine("1: Insert Default Values \n2: Enter More Values \n3: Display Binary Tree Values \n4: Get Size Of Binary Tree"+
+                Console.WriteLine("1: Insert Default Values \n2: Insert More Values \n3: Display Binary Tree Values \n4: Get Size Of Binary Tree"+
                                   "\n5: Check The Value Exist Or Not \n6: Exit");
                 Console.Write("Enter A Choice From Above : ");
                 int choice = int.Parse(Console.ReadLine());

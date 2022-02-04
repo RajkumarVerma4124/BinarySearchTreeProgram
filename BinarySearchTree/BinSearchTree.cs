@@ -9,13 +9,16 @@ namespace BinarySearchTree
     //Creating binary search tree using generics and IComparable to use CompareTo method in program(UC1)
     public class BinSearchTree<T> where T : IComparable<T>
     {
+        //Initializing variables
         public int leftCount, rightCount;
         public bool result = false;
 
+        //Declaring Properties
         public T NodeData { get; set; }
         public BinSearchTree<T> LeftTree { get; set; }
         public BinSearchTree<T> RightTree { get; set; }
 
+        //Paramerterized constructor
         public BinSearchTree(T nodeData)
         {
             this.NodeData = nodeData;
@@ -31,8 +34,8 @@ namespace BinarySearchTree
             {
                 if (this.LeftTree == null)
                 {
-                    this.LeftTree = new BinSearchTree<T>(data);
                     leftCount++;
+                    this.LeftTree = new BinSearchTree<T>(data);
                 }
                 else
                 {
@@ -44,7 +47,7 @@ namespace BinarySearchTree
             {
                 if (this.RightTree == null)
                 {
-                    leftCount++;
+                    rightCount++;
                     this.RightTree = new BinSearchTree<T>(data);
                 }
                 else
